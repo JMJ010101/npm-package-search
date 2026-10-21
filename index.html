@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>npm 패키지 조회</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <h1>npm 패키지 조회</h1>
+    <p class="subtitle">패키지 이름을 입력하면 버전, 라이선스, 의존성, 주간 다운로드를 보여줘요.</p>
+
+    <form id="lookupForm" class="form" novalidate>
+      <div class="field">
+        <label class="sr-only" for="packageName">패키지 이름</label>
+        <input id="packageName" type="text" placeholder="패키지 이름  (예: react)" list="packageOptions" autocomplete="off" spellcheck="false">
+      </div>
+      <button id="lookupBtn" type="submit">조회</button>
+    </form>
+
+    <!-- 드롭다운 목록 (목록에 없는 이름도 직접 입력 가능) -->
+    <datalist id="packageOptions">
+      <option value="react"></option>
+      <option value="vue"></option>
+      <option value="svelte"></option>
+      <option value="preact"></option>
+      <option value="solid-js"></option>
+      <option value="@angular/core"></option>
+      <option value="next"></option>
+      <option value="nuxt"></option>
+      <option value="vite"></option>
+      <option value="webpack"></option>
+      <option value="esbuild"></option>
+      <option value="rollup"></option>
+      <option value="typescript"></option>
+      <option value="eslint"></option>
+      <option value="prettier"></option>
+      <option value="jest"></option>
+      <option value="vitest"></option>
+      <option value="axios"></option>
+      <option value="lodash"></option>
+      <option value="dayjs"></option>
+      <option value="moment"></option>
+      <option value="express"></option>
+      <option value="fastify"></option>
+      <option value="zustand"></option>
+      <option value="redux"></option>
+      <option value="tailwindcss"></option>
+      <option value="@babel/core"></option>
+    </datalist>
+
+    <p id="formMessage" class="form-message" role="alert"></p>
+    <p id="status" class="status" aria-live="polite"></p>
+    <section id="result" class="result"></section>
+  </main>
+</body>
+</html>
